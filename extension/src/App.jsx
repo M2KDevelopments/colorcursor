@@ -65,20 +65,14 @@ export default function App() {
 
                 <Alert variant="light" className="round dropShadow">
                     <h4><strong>My ColorCursor</strong></h4>
-                    <h6>You can click on any image and make it your <strong>cursor</strong>360!</h6>
-                    <i>Just <strong>Right Click</strong> on a image an its your cursor now</i>
-                    <hr/>
-                    <img alt="cursor" src={cursor} style={{width:displaySize, height:displaySize}}/>
-                    <br/><br/>
-                    <h5>Or Use <strong>Color Cursor</strong></h5>
-                    <br/>
+                    <h6>Choose your color cursor</h6>
                     
+                    <br/><br/>
+                    <h6>Cursor Size</h6>
+                    <hr/>
                     <FormControl style={{width:300}} type="range" min={12} max={32} value={size} onChange={(e)=>setSize(parseInt(e.target.value))} className="slider centralise"/>
                     <br/>
                     <Row xs={2}>
-                        <Col>
-                            <ColorPicker color={color} onChange={setColor}/>
-                        </Col>
                         <Col>
                             <h6>Preview</h6>
                             <hr/>
@@ -87,12 +81,15 @@ export default function App() {
                                 <strong>Use</strong>
                             </Button>
                         </Col>
+                        <Col>
+                            <ColorPicker color={color} onChange={setColor}/>
+                        </Col>
                     </Row>
                     <br/><br/>
 
-                    <Button variant="success" className="round hover dropShadow" size="lg" onClick={onDefault}>
+                    <Button variant="primary" className="round hover dropShadow" size="lg" onClick={onDefault}>
                         <img src="https://img.icons8.com/ios-filled/24/ffffff/cursor.png" alt="default_cursor" />
-                        <strong>Use Default</strong>
+                        <strong>Use Normal</strong>
                     </Button>
 
                 </Alert>
